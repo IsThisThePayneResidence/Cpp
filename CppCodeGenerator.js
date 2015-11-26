@@ -197,7 +197,7 @@ define(function (require, exports, module) {
                 codeWriter.writeLine(templatePart);
             }
 
-            codeWriter.writeLine("class " + elem.name + finalModifier + writeInheritance(elem) + " {");
+            codeWriter.writeLine("class " + elem.name + finalModifier + writeInheritance(elem) + "\n{");
             if (classfiedAttributes._public.length > 0) {
                 codeWriter.writeLine("public: ");
                 codeWriter.indent();
@@ -612,7 +612,7 @@ define(function (require, exports, module) {
 
                 methodStr += specifier;
                 methodStr += elem.name;
-                methodStr += "(" + inputParamStrings.join(", ") + ")" + " {\n";
+                methodStr += "(" + inputParamStrings.join(", ") + ")" + "\n{\n";
                 if (returnTypeParam.length > 0) {
                     var returnType = returnTypeParam[0].type;
                     if (returnType === "boolean" || returnType === "bool") {
