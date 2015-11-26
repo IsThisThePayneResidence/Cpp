@@ -2,7 +2,7 @@
     "name": "staruml.cplus",
     "title": "C++11",
     "description": "C++ code generation and reverse engineering.",
-    "homepage": "https://github.com/staruml/Cpp",
+    "homepage": "https://github.com/IsThisThePayneResidence/Cpp",
     "keywords": ["c++"],
     "version": "0.10.0",
     "author": {
