@@ -69,7 +69,7 @@ define(function (require, exports, module) {
 
                         // If path is not assigned, popup Open Dialog to select a folder
                         if (!path) {
-                            FileSystem.showOpenDialog(false, true, "Select a folder where generated codes to be located", null, null, function (err, files) {
+                            FileSystem.showSaveDialog(false, true, "Select a folder where generated codes to be located", null, null, function (err, files) {
                                 if (!err) {
                                     if (files.length > 0) {
                                         path = files[0];
