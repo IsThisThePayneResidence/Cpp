@@ -1,6 +1,6 @@
 {
     "name": "staruml.cplus",
-    "title": "C++",
+    "title": "C++11",
     "description": "C++ code generation and reverse engineering.",
     "homepage": "https://github.com/staruml/Cpp",
     "keywords": ["c++"],
