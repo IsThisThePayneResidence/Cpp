@@ -630,7 +630,7 @@ define(function (require, exports, module) {
                     } else if (~returnType.indexOf("*")) {
                         methodStr += indentLine + "return nullptr;";
                     } else {
-                        methodStr += indentLine + "return null;";
+                        methodStr += indentLine + "return" + returnType + "();";
                     }
                     docs += "\n@return " + returnType;
                 }
