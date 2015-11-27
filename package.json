@@ -1,14 +1,14 @@
 {
-    "name": "staruml.cplus",
+    "name": "staruml.cplusplus",
     "title": "C++11",
     "description": "C++ code generation and reverse engineering.",
     "homepage": "https://github.com/IsThisThePayneResidence/Cpp",
     "keywords": ["c++"],
     "version": "0.10.0",
     "author": {
-        "name": "Dongjoon Lee",
-        "email": "joon1251@gmail.com",
-        "url": "https://github.com/dongjoon1251"
+        "name": "Dongjoon",
+        "email": "joon12511@gmail.com",
+        "url": "https://github.com/IsThisThePayneResidence/"
     },
     "license": "MIT",
     "engines": {
