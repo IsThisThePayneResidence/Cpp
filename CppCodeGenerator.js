@@ -627,6 +627,8 @@ define(function (require, exports, module) {
                         methodStr += indentLine + 'return "";';
                     } else if (returnType === "void") {
                         methodStr += indentLine + "return;";
+                    } else if (~returnType.indexOf("*")) {
+                        methodStr += indentLine + "return nullptr;";
                     } else {
                         methodStr += indentLine + "return null;";
                     }
