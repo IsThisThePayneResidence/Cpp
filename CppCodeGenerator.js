@@ -638,8 +638,10 @@ define(function (require, exports, module) {
             } else {
                 methodStr += elem.name;
                 methodStr += "(" + inputParamStrings.join(", ") + ")";
-
-                if (elem.isLeaf === true) {
+                
+                if (elem.isQuery === true) {
+                    methodStr += " const";
+                } else if (elem.isLeaf === true) {
                     methodStr += " final";
                 } else if (elem.isAbstract === true) { // TODO 만약 virtual 이면 모두 pure virtual? 체크 할것
                     methodStr += " = 0";
