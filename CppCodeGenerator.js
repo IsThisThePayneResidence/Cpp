@@ -593,7 +593,7 @@ define(function (require, exports, module) {
                 docs += "\n@param " + inputParam.name;
             }
 
-            methodStr += ((returnTypeParam.length > 0) ? returnTypeParam[0].type : "void") + " ";
+            methodStr += ((returnTypeParam.length > 0) ? returnTypeParam[0].type : "") + " ";
 
             if (isCppBody) {
                 var t_elem = elem;
