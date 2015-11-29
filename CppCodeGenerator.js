@@ -612,15 +612,20 @@ define(function (require, exports, module) {
 
                 methodStr += specifier;
                 methodStr += elem.name;
-                methodStr += "(" + inputParamStrings.join(", ") + ")" + "\n{\n";
+                methodStr += "(" + inputParamStrings.join(", ") + ")" + (elem.isQuery ? " const " : "") + "\n{\n";
                 if (returnTypeParam.length > 0) {
                     var returnType = returnTypeParam[0].type;
                     if (returnType === "boolean" || returnType === "bool") {
                         methodStr += indentLine + "return false;";
-                    } else if (returnType === "int" || returnType === "long" || returnType === "short" || returnType === "byte") {
+                    } else if (returnType === "int" 
+                    || returnType === "quint8" || returnType === "quint16" 
+                    || returnType === "quint32" || returnType === "quint64"
+                    || returnType === "qint8" || returnType === "qint16" 
+                    || returnType === "qint32" || returnType === "qint64"
+                    || returnType === "long" || returnType === "short" || returnType === "byte") {
                         methodStr += indentLine + "return 0;";
-                    } else if (returnType === "double" || returnType === "float") {
-                        methodStr += indentLine + "return 0.0;";
+                    } else if (returnType === "double" || returnType === "float" || returnType === "qreal") {
+                        methodStr += indentLine + "return 0.0f;";
                     } else if (returnType === "char") {
                         methodStr += indentLine + "return '0';";
                     } else if (returnType === "string" || returnType === "String") {
@@ -630,7 +635,7 @@ define(function (require, exports, module) {
                     } else if (~returnType.indexOf("*")) {
                         methodStr += indentLine + "return nullptr;";
                     } else {
-                        methodStr += indentLine + "return QObject();";
+                        methodStr += indentLine + "return " + returnType + "();";
                     }
                     docs += "\n@return " + returnType;
                 }
