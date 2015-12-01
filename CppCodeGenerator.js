@@ -102,7 +102,7 @@ define(function (require, exports, module) {
         this.genOptions = options;
 
         var getFilePath = function (extenstions) {
-            var abs_path = path + "/" + elem.name + ".";
+            var abs_path = path + "/" + elem.name.toLowerCase() + ".";
             if (extenstions === _CPP_CODE_GEN_H) {
                 abs_path += _CPP_CODE_GEN_H;
             } else {
@@ -376,7 +376,7 @@ define(function (require, exports, module) {
 
         codeWriter.writeLine(copyrightHeader);
         codeWriter.writeLine();
-        codeWriter.writeLine("#include \"" +  elem.name + ".h\"");
+        codeWriter.writeLine("#include \"" +  elem.name.toLowerCase() + ".h\"");
         codeWriter.writeLine();
         funct(codeWriter, elem, this);
         return codeWriter.getData();
@@ -428,11 +428,11 @@ define(function (require, exports, module) {
 
 
             while (elem._parent._parent !== null) {
-                elementString = (elementString.length !== 0) ?  elem.name + "/" + elementString : elem.name;
+                elementString = (elementString.length !== 0) ?  elem.name.toLowerCase() + "/" + elementString : elem.name.toLowerCase();
                 elem = elem._parent;
             }
             while (target._parent._parent !== null) {
-                targetString = (targetString.length !== 0) ?  target.name + "/" + targetString : target.name;
+                targetString = (targetString.length !== 0) ?  target.name.toLowerCase() + "/" + targetString : target.name.toLowerCase();
                 target = target._parent;
             }
 
